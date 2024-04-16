@@ -31,3 +31,6 @@ export const BalanceCard = ({amount, locked}: {
         </div>
     </Card>
 }
+
+
+
