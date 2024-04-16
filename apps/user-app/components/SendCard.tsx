@@ -30,3 +30,6 @@ export function SendCard() {
         </Center>
     </div>
 }
+
+
+
