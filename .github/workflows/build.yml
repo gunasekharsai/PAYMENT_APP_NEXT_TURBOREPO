@@ -18,7 +18,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: genarete prisma client
-        run: npm run db:genearte
+        run: npm run db:generate
         
       - name: Run Build
         run: npm run build
