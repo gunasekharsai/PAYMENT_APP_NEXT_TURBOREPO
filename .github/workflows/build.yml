@@ -20,6 +20,8 @@ jobs:
       - name: genarete prisma client
         run: npm run db:genearte
         
+
+        
       - name: Run Build
         run: npm run build
 
