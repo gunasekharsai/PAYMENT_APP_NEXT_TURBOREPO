@@ -1,9 +1,10 @@
+
 name: Build on PR
 
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -17,9 +18,12 @@ jobs:
       
       - name: Install Dependencies
         run: npm install
+      - name: install dependencies
+        working-directory: ./apps/user-app
+        run: npm install
       - name: genarete prisma client
         run: npm run db:generate
+
         
       - name: Run Build
         run: npm run build
-
