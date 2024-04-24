@@ -9,7 +9,7 @@
     "./appbar": "./src/Appbar.tsx",
     "./center": "./src/center.tsx",
     "./select": "./src/Select.tsx",
-    "./textinput": "./src/TextInput.tsx"
+    "./textinput": "./src/Textinput.tsx"
   },
 
   
