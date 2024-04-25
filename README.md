@@ -1,81 +1,52 @@
-# Turborepo starter
 
-This is an official starter Turborepo.
+# Payment_App_futures
 
-## Using this example
+this is a basic Payment app consists of basic futures
 
-Run the following command:
+1) one can add amount int thiwe wallets by hitting the dummy webhook after it redirects to hdfc/axis Payment gateway
 
-```sh
-npx create-turbo@latest
-```
+2) users can send money to each other
 
-## What's inside?
+3) user can see the transaction status.
 
-This Turborepo includes the following packages/apps:
+# Technologies used
 
-### Apps and Packages
+1) used NEXT.js for frontend and backend
+2) created a dummy bank webhook using EXPRESS.js
+3) used PRISMA as ORM and POSTGRESS database
+4) NEXT_AUTH for authentication (Signin/signup).
+5) created a CI pipeline using github to ensure faster pullrequest and efficient collbaration
+6) used turborepo to manage toplevel dependiencies mainly ZOD validation.
+7) created a DOCKER IMAGE and posted in DOCKERHUB
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+# why questions??
+1) why next.js?
+ans:   currently its the popular framework so want to explore it
+and it solves some drawbacks of REACT framework like
+    1) SEO optimazation so that browser crawlers can recognise what our website does it happens because its server side rendering feauture.
+    2) waterfalling problem
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+2) why dummy bank webhook??
+ans: I created sepearte webhook because if our server may goes down
+and if the bank sends you a request there may be chance that our request get fails so to avoid this we need a separate webhook and we have to hit it through postman because we dont have access to bank URls 
 
-### Utilities
+3) why dockerimage??
 
-This Turborepo has some additional tools already setup for you:
+ans: i created it beacuse i want to perform CD opeartion by having an EC2 instance currently i dont have an EC2 instance .
+our EC2 instance will get the images of our app from the DockeR hub
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+# START THE PROJECT
 
-### Build
+1) git clone https://github.com/gunasekharsai/PAYMENT_APP_NEXT_TURBOREPO.git
 
-To build all apps and packages, run the following command:
+2) go to packages/db/prisma there is .env replace dataabase URl of yours (you can get it from aiven/neondb for free)
 
-```
-cd my-turborepo
-pnpm build
-```
+3) cd apps/user-app  run command npm run dev
 
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+4) open the website enter a number and password and go transfer add some amount and select some bank click on the enter button 
+then you will go to the respective bank page then come back you can onramptransaction proccessing after that got to postman place this URL http://localhost:3003/hdfcWebhook and place these as body   "token": "611.681682591642",
+                "user_identifier": "6",
+                "amount":"666600"
+make sure no headers then you can see the balance gets updated
+5) you can also do p2p transfer and can send money from one user to other
+ 
