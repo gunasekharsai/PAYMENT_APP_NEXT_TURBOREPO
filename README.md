@@ -49,4 +49,9 @@ then you will go to the respective bank page then come back you can onramptransa
                 "amount":"666600"
 make sure no headers then you can see the balance gets updated
 5) you can also do p2p transfer and can send money from one user to other
+
+#How it looks
+![Screenshot (37)](https://github.com/gunasekharsai/PAYMENT_APP_NEXT_TURBOREPO/assets/113043690/8495823b-aa8d-4e46-92a3-8f30b3c92bc4)
+![Screenshot (38)](https://github.com/gunasekharsai/PAYMENT_APP_NEXT_TURBOREPO/assets/113043690/446c30b0-9e5d-48b7-8f7b-12d9efeb07ef)
+
  
